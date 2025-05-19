@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Add new task...">
+            <input type="datetime-local" id="deadlineInput">
+            <button id="addTaskBtn">Add</button>
+        </div>
+        <div class="priority-grid">
+            <div class="priority-section" id="urgent-important" data-priority="urgent-important">
+                <h2>紧急且重要</h2>
+                <ul class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+            </div>
+            <div class="priority-section" id="urgent-not-important" data-priority="urgent-not-important">
+                <h2>紧急不重要</h2>
+                <ul class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+            </div>
+            <div class="priority-section" id="not-urgent-important" data-priority="not-urgent-important">
+                <h2>重要不紧急</h2>
+                <ul class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+            </div>
+            <div class="priority-section" id="not-urgent-not-important" data-priority="not-urgent-not-important">
+                <h2>不紧急不重要</h2>
+                <ul class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+            </div>
+        </div>
+        <div class="axis-labels">
+            <div class="y-axis">紧急程度</div>
+            <div class="x-axis">重要程度</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
